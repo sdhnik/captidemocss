@@ -1,7 +1,11 @@
 :root {
+  --color-primary: #0B72EA;
+  --color-primary-hover: #095AB9;
+  --color-secondary: #348E32;
+  --color-secondary-hover: #266825;
   --color-gray: rgb(144, 144, 144);
 }
 
 @import './base.scss';
 @import './primary.scss';
-
+@import './secondary.scss';

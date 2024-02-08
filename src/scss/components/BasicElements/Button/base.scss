@@ -1,3 +1,5 @@
+/* === Base button === */
+
 .button {
   all: unset;
   display: inline-flex;
@@ -25,5 +27,19 @@
     opacity: 0.5;
     pointer-events: none;
     cursor: default;
+  }
+
+  &.button--square {
+    border-radius: 4px;
+  }
+
+  &.button--full-width {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &.button--large {
+    font-size: 18px;
+    padding: 12px 24px;
   }
 }
