@@ -1,3 +1,6 @@
 @import './basic/index.scss';
 
+@import './vendor/variables.scss';
+
 @import './components/BasicElements/Button/index.scss';
+@import './components/BasicElements/Toggle/index.scss';

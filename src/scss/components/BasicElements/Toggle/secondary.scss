@@ -1,0 +1,20 @@
+/* === Secondary button === */
+
+.toggle--secondary {
+  input[type="checkbox"],
+  input[type="radio"] {
+    &:checked:not([disabled]) + label {
+      &::before {
+        background-color: var(--color-secondary);
+      }
+  
+      &:hover::before {
+        background-color: var(--color-secondary-hover);
+      }
+    }
+
+    &:focus + label::before {
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-secondary) 50%, transparent);
+    }
+  }
+}

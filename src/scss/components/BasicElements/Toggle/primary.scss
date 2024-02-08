@@ -1,0 +1,20 @@
+/* === Primary button === */
+
+.toggle--primary {
+  input[type="checkbox"],
+  input[type="radio"] {
+    &:checked:not([disabled]) + label {
+      &::before {
+        background-color: var(--color-primary);
+      }
+  
+      &:hover::before {
+        background-color: var(--color-primary-hover);
+      }
+    }
+
+    &:focus + label::before {
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 50%, transparent);
+    }
+  }
+}

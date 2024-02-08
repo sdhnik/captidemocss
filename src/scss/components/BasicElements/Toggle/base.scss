@@ -1,0 +1,163 @@
+/* === Base button === */
+
+.toggle {
+  position: relative;
+  display: inline-block;
+
+  label {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 38px;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      content: "";
+      display: inline-block;
+      width: 30px;
+      height: 16px;
+      background-color: var(--color-gray);
+      border-radius: 16px;
+      margin: auto;
+      transition: background-color 0.3s ease;
+    }
+
+    &::after {
+      position: absolute;
+      top: 2px;
+      right: calc(100% - 14px);
+      bottom: 2px;
+      content: "";
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+      transition: 0.3s ease;
+      margin: auto;
+    }
+
+    &:hover::before {
+      background-color: var(--color-gray-hover);
+    }
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked + label {
+      &::before {
+        background-color: currentColor;
+      }
+
+      &::after {
+        right: calc(100% - 28px);
+      }
+    }
+
+    &:focus + label::before {
+      box-shadow: 0 0 0 2px color-mix(in srgb, currentColor 50%, transparent);
+    }
+  }
+
+  input[type="checkbox"][disabled] + label,
+  input[type="radio"][disabled] + label,
+  &.toggle--disabled input[type="checkbox"] + label,
+  &.toggle--disabled input[type="radio"] + label {
+    pointer-events: none;
+
+    &::before {
+      background-color: white;
+      box-shadow: 0 0 0 2px #DDDDDD;
+    }
+
+    &::after {
+      background-color: #DDDDDD;
+    }
+  }
+
+  &.toggle--small {
+    label {
+      padding-left: 24px;
+
+      &::before {
+        width: 20px;
+        height: 10px;
+        border-radius: 10px;
+      }
+
+      &::after {
+        width: 8px;
+        height: 8px;
+        top: 1px;
+        right: calc(100% - 9px);
+        bottom: 1px;
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      &:checked + label {
+        &::after {
+          right: calc(100% - 19px);
+        }
+      }
+    }
+
+    &.toggle--edge-end {
+      label {
+        padding-left: 0;
+        padding-right: 24px;
+  
+        &::after {
+          left: calc(100% - 9px);
+          right: auto;
+        }
+      }
+  
+      input[type="checkbox"],
+      input[type="radio"] {
+        &:checked + label {
+          &::after {
+            left: calc(100% - 19px);
+            right: auto;
+          }
+        }
+      }
+    }
+  }
+
+  &.toggle--edge-end {
+    label {
+      padding-left: 0;
+      padding-right: 38px;
+
+      &::before {
+        left: auto;
+        right: 0;
+      }
+  
+      &::after {
+        right: auto;
+        left: calc(100% - 14px);
+      }
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+      &:checked + label {
+        &::after {
+          right: auto;
+          left: calc(100% - 28px);
+        }
+      }
+    }
+  }
+}
