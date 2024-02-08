@@ -1,0 +1,27 @@
+body {
+  font-family: "IBM Plex Sans",-apple-system,"BlinkMacSystemFont","Segoe UI","Roboto","Oxygen-Sans","Ubuntu","Cantarell","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+hr {
+  margin: 1em 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.comment {
+  font-size: 14px;
+  opacity: 0.5;
+  margin: 0 0 0.5em
+}
+
+svg {
+  width: 16px;
+  height: 16px;
+}
