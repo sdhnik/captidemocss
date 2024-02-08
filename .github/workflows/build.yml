@@ -23,6 +23,9 @@ jobs:
         with:
           name: css
           path: css/
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
@@ -31,4 +34,6 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update CSS
-          branch: gh-pages
+          push_options: '--force'
+          skip_dirty_check: true
+          skip_fetch: true
