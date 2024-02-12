@@ -1,0 +1,54 @@
+/* === Secondary Radio === */
+
+.radio--secondary {
+  input[type="radio"] {
+    &:not([disabled]) + label {
+      &::before {
+        box-shadow: 0 0 0 2px var(--color-secondary);
+      }
+
+      &:hover {
+        &::before {
+          background-color: color-mix(
+            in srgb,
+            var(--color-secondary-hover) 50%,
+            transparent
+          );
+          box-shadow: 0 0 0 2px var(--color-secondary-hover);
+        }
+      }
+    }
+
+    &:checked:not([disabled]) + label {
+      &::before {
+        background-color: var(--color-secondary);
+      }
+
+      &:hover {
+        &::before {
+          background-color: var(--color-secondary-hover);
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      &:focus + label {
+        &::before {
+          background-color: color-mix(
+            in srgb,
+            var(--color-secondary-hover) 50%,
+            transparent
+          );
+          box-shadow: 0 0 0 2px var(--color-secondary-hover);
+        }
+      }
+
+      &:checked:focus + label {
+        &::before {
+          background-color: var(--color-secondary-hover);
+          box-shadow: 0 0 0 2px var(--color-secondary-hover);
+        }
+      }
+    }
+  }
+}

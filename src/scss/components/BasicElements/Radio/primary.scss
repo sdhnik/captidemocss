@@ -1,0 +1,54 @@
+/* === Primary Radio === */
+
+.radio--primary {
+  input[type="radio"] {
+    &:not([disabled]) + label {
+      &::before {
+        box-shadow: 0 0 0 2px var(--color-primary);
+      }
+
+      &:hover {
+        &::before {
+          background-color: color-mix(
+            in srgb,
+            var(--color-primary-hover) 50%,
+            transparent
+          );
+          box-shadow: 0 0 0 2px var(--color-primary-hover);
+        }
+      }
+    }
+
+    &:checked:not([disabled]) + label {
+      &::before {
+        background-color: var(--color-primary);
+      }
+
+      &:hover {
+        &::before {
+          background-color: var(--color-primary-hover);
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      &:focus + label {
+        &::before {
+          background-color: color-mix(
+            in srgb,
+            var(--color-primary-hover) 50%,
+            transparent
+          );
+          box-shadow: 0 0 0 2px var(--color-primary-hover);
+        }
+      }
+
+      &:checked:focus + label {
+        &::before {
+          background-color: var(--color-primary-hover);
+          box-shadow: 0 0 0 2px var(--color-primary-hover);
+        }
+      }
+    }
+  }
+}

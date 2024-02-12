@@ -1,4 +1,4 @@
-/* === Base button === */
+/* === Base Toggle === */
 
 .toggle {
   position: relative;
@@ -9,6 +9,7 @@
     vertical-align: top;
     padding-left: 38px;
     cursor: pointer;
+    user-select: none;
 
     &::before {
       position: absolute;
@@ -75,11 +76,11 @@
 
     &::before {
       background-color: white;
-      box-shadow: 0 0 0 2px #DDDDDD;
+      box-shadow: 0 0 0 2px var(--color-disabled);
     }
 
     &::after {
-      background-color: #DDDDDD;
+      background-color: var(--color-disabled);
     }
   }
 

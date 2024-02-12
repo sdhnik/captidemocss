@@ -1,0 +1,45 @@
+/* === Secondary Checkbox === */
+
+.checkbox--secondary {
+  input[type="checkbox"] {
+    &:not([disabled]) + label {
+      &::before {
+        border-color: var(--color-secondary);
+      }
+
+      &:hover {
+        &::before {
+          border-color: var(--color-secondary-hover);
+        }
+      }
+    }
+
+    &:checked:not([disabled]) + label {
+      &::before {
+        background-color: var(--color-secondary);
+        border-color: var(--color-secondary);
+      }
+
+      &:hover {
+        &::before {
+          background-color: var(--color-secondary-hover);
+          border-color: var(--color-secondary-hover);
+        }
+      }
+    }
+
+    &:not([disabled]) {
+      &:focus + label {
+        &::before {
+          border-color: var(--color-secondary-hover);
+        }
+      }
+
+      &:checked:focus + label {
+        &::before {
+          background-color: var(--color-secondary-hover);
+        }
+      }
+    }
+  }
+}

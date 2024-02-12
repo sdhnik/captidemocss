@@ -1,0 +1,78 @@
+/* === Base Radio === */
+
+.radio {
+  display: inline-block;
+
+  input[type=radio] {
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+    opacity: 0;
+    
+    &:checked + label {
+      &::before {
+        background-color: currentColor;
+      }
+      
+      &:hover {
+        &::before {
+          background-color: currentColor;
+        }
+      }
+    }
+
+    &:focus + label {
+      &::before {
+        background-color: currentColor;
+      }
+    }
+  }
+
+  label {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+    vertical-align: top;
+    line-height: 20px;
+    cursor: pointer;
+    user-select: none;
+    
+    &:hover {
+      &::before {
+        background-color: color-mix(in srgb, currentColor 50%, transparent);
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: transparent;
+      border: 4px solid #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px currentColor;
+      transition: 0.3s ease;
+    }
+  }
+  
+  input[type="radio"][disabled],
+  &.radio--disabled input[type="radio"] {
+    + label {
+      pointer-events: none;
+      
+      &::before {
+        box-shadow: 0 0 0 2px var(--color-disabled);
+      }
+    }
+    
+    &:checked + label {
+      &::before {
+        background-color: var(--color-disabled);
+        box-shadow: 0 0 0 2px var(--color-disabled);
+      }
+    }
+  }
+}
