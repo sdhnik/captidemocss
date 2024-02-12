@@ -1,0 +1,33 @@
+/* === Secondary Textfield === */
+
+.textfield--secondary {
+  input[type="text"],
+  input[type="number"],
+  input[type="password"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="tel"],
+  textarea {
+    border-bottom: 1px solid var(--color-gray);
+
+    &:focus {
+      border-bottom: 1px solid var(--color-secondary);
+    }
+  }
+
+  &.textfield--filled {
+    input[type="text"],
+    input[type="number"],
+    input[type="password"],
+    input[type="email"],
+    input[type="search"],
+    input[type="url"],
+    input[type="tel"],
+    textarea {
+      &:not([disabled]) {
+        border-bottom: 1px solid var(--color-secondary);
+      }
+    }
+  }
+}
