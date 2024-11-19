@@ -1,0 +1,11 @@
+/* === Secondary Badge === */
+
+.badge--secondary {
+  background-color: var(--color-secondary);
+  color: white;
+  
+  &.badge--invert {
+    background-color: color-mix(in srgb, var(--color-secondary) 10%, transparent);
+    color: var(--color-secondary);
+  }
+}

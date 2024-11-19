@@ -1,0 +1,11 @@
+/* === Primary Badge === */
+
+.badge--primary {
+  background-color: var(--color-primary);
+  color: white;
+  
+  &.badge--invert {
+    background-color: color-mix(in srgb, var(--color-primary) 10%, transparent);
+    color: var(--color-primary);
+  }
+}

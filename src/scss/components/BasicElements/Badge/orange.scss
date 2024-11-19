@@ -1,0 +1,11 @@
+/* === Orange Badge === */
+
+.badge--orange {
+  background-color: var(--color-orange);
+  color: white;
+  
+  &.badge--invert {
+    background-color: color-mix(in srgb, var(--color-orange) 10%, transparent);
+    color: var(--color-orange);
+  }
+}
