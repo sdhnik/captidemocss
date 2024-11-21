@@ -1,0 +1,105 @@
+/* === Base Tabs === */
+
+.gwt-TabPanel.tabs {
+  width: 100%;
+  
+  .gwt-TabBar {
+    margin: 0;
+    min-height: 54px;
+    border-bottom: 1px solid var(--color-disabled);
+    
+    & tbody,
+    & tr,
+    & td {
+      display: block;
+      width: 100%;
+    }
+    
+    & td {
+      width: auto;
+    }
+    
+    > tbody > tr:first-child {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      margin: auto;
+    }
+  }
+
+  .gwt-TabBarItem-wrapper {
+    width: auto;
+    
+    &.gwt-TabBarItem-wrapper-selected {
+      .gwt-Label {
+        border-bottom: 4px solid currentColor;
+        color: currentColor;
+        
+        &:hover {
+          color: currentColor;
+        }
+      }
+    }
+  
+    .gwt-TabBarItem {
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+      
+      &-selected,
+      &-disabled {
+          cursor: default
+      }
+      
+      &-disabled {
+        .gwt-Label {
+          &,
+          &:hover {
+            pointer-events: none;
+            color: var(--color-disabled);
+          }
+        }
+      }
+      
+      &-selected:focus {
+        outline: 0;
+      }
+    }
+
+    .gwt-Label {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-gray);
+      border-bottom: 4px solid transparent;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 21px;
+      min-height: 54px;
+      transition: color 0.2s ease, box-shadow 0.2s ease;
+      
+      &:hover {
+        color: var(--color-gray-hover);
+      }
+    }
+  }
+
+  .gwt-TabBarFirst-wrapper,
+  .gwt-TabBarRest-wrapper:last-of-type {
+    display: none !important;
+  }
+  
+  .gwt-TabPanelBottom {
+    padding: 16px;
+  }
+}
+
+.tabs {
+  .gwt-TabBarItem {
+    color: var(--color-violet);
+  }
+}
